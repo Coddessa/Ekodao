@@ -1,0 +1,777 @@
+.list {
+  &__item {
+    border-radius: 16px;
+    min-height: 453px;
+    position: relative;
+    padding: 16px;
+    margin: 0;
+    transition:
+      background-color 0.2s ease-in-out,
+      box-shadow 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    @media (max-width: 800px) {
+      background-color: #fff;
+    }
+
+    @media (max-width: 680px) {
+      padding-bottom: 40px;
+      min-height: 490px;
+    }
+    @media (min-width: 1151px) and (max-width: 1300px) {
+      padding-bottom: 70px;
+    }
+    &__label {
+      border-radius: 16px;
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 6px 16px;
+      z-index: 1;
+    }
+
+    &__plants {
+      background-color: #799c7f;
+      &:hover {
+        background-color: #556d59;
+        transition: box-shadow 0.2s ease-in-out;
+      }
+    }
+
+    &__fertilizers {
+      background-color: #915d56;
+      &:hover {
+        background-color: #66413c;
+        transition: box-shadow 0.2s ease-in-out;
+      }
+    }
+    &__new {
+      margin-top: 38px;
+      background-color: #fafafa;
+      color: #1c4233;
+      &:hover {
+        background-color: #1c4233;
+        transition: box-shadow 0.2s ease-in-out;
+        color: #fff;
+      }
+    }
+
+    &__bestseller {
+      margin-top: 38px;
+      background-color: #fafafa;
+      color: #dd2c76;
+      &:hover {
+        background-color: #dd2c76;
+        transition: box-shadow 0.2s ease-in-out;
+        color: #fff;
+      }
+    }
+
+    &__actions {
+      opacity: 0;
+      visibility: hidden;
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      display: flex;
+      flex-direction: column;
+      transition:
+        opacity 0.2s ease-in-out,
+        visibility 0.2s ease-in-out;
+      z-index: 1;
+
+      @media (max-width: 800px) {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    &__img {
+      margin: 0;
+
+      img {
+        border-radius: 16px;
+        max-width: 100%;
+        max-height: 332px;
+        margin: 0;
+        background: transparent;
+        transition: 0.2s ease-in-out;
+        object-fit: cover;
+      }
+    }
+
+    &__inner {
+      align-self: flex-start;
+      width: 100%;
+      &__types {
+        &__container {
+          display: flex;
+          margin-top: 332px;
+          justify-content: space-between;
+          width: 100%;
+        }
+        &__titleSub {
+          color: #707d8a;
+          font-size: 14px;
+          font-weight: 500;
+          &:hover {
+            transition: color 0.2s ease-in-out;
+            color: #799c7f;
+          }
+        }
+        &__containerI {
+          display: flex;
+          @media (max-width: 800px) {
+            display: none;
+          }
+          &__succulents {
+            &::before {
+              margin-right: 8px;
+              content: '';
+              display: block;
+              margin-top: -3px;
+              width: 24px;
+              height: 24px;
+              z-index: 2;
+              background-color: #986529;
+              -webkit-mask: url(/img/plants/is/is-succulents.svg) no-repeat 50%
+                50%;
+              mask: url(/img/plants/is/is-succulents.svg) no-repeat 50% 50%;
+              transition: background-color 0.2s ease-in-out;
+            }
+          }
+          &__houseplants {
+            &::before {
+              content: '';
+              display: block;
+              margin-top: -3px;
+              width: 24px;
+              height: 24px;
+              z-index: 2;
+              background-color: #556d59;
+              -webkit-mask: url(/img/plants/is/is-houseplants.svg) no-repeat 50%
+                50%;
+              mask: url(/img/plants/is/is-houseplants.svg) no-repeat 50% 50%;
+              transition: background-color 0.2s ease-in-out;
+            }
+          }
+          &__garden-plants {
+            &::before {
+              content: '';
+              display: block;
+              margin-top: -3px;
+              width: 24px;
+              height: 24px;
+              z-index: 2;
+              background-color: #556d59;
+              -webkit-mask: url(/img/plants/is/is-garden-plants.svg) no-repeat
+                50% 50%;
+              mask: url(/img/plants/is/is-garden-plants.svg) no-repeat 50% 50%;
+              transition: background-color 0.2s ease-in-out;
+            }
+          }
+          &__vegetable-garden-plants {
+            &::before {
+              content: '';
+              display: block;
+              margin-top: -3px;
+              width: 24px;
+              height: 24px;
+              z-index: 2;
+              background-color: #556d59;
+              -webkit-mask: url(/img/plants/is/is-vegetable-garden-plants.svg)
+                no-repeat 50% 50%;
+              mask: url(/img/plants/is/is-vegetable-garden-plants.svg) no-repeat
+                50% 50%;
+              transition: background-color 0.2s ease-in-out;
+            }
+          }
+          &__medicinal-plants {
+            &::before {
+              content: '';
+              display: block;
+              margin-top: -3px;
+              width: 24px;
+              height: 24px;
+              z-index: 2;
+              background-color: #556d59;
+              -webkit-mask: url(/img/plants/is/is-medicinal-plants.svg)
+                no-repeat 50% 50%;
+              mask: url(/img/plants/is/is-medicinal-plants.svg) no-repeat 50%
+                50%;
+              transition: background-color 0.2s ease-in-out;
+            }
+          }
+          &__aquarium-and-marsh-plants {
+            &::before {
+              content: '';
+              display: block;
+              margin-top: -3px;
+              width: 24px;
+              height: 24px;
+              z-index: 2;
+              background-color: #556d59;
+              -webkit-mask: url(/img/plants/is/is-aquarium-and-marsh-plants.svg)
+                no-repeat 50% 50%;
+              mask: url(/img/plants/is/is-aquarium-and-marsh-plants.svg)
+                no-repeat 50% 50%;
+              transition: background-color 0.2s ease-in-out;
+            }
+          }
+          &__decorative-conifers {
+            &::before {
+              content: '';
+              display: block;
+              margin-top: -3px;
+              width: 24px;
+              height: 24px;
+              z-index: 2;
+              background-color: #556d59;
+              -webkit-mask: url(/img/plants/is/is-decorative-conifers.svg)
+                no-repeat 50% 50%;
+              mask: url(/img/plants/is/is-decorative-conifers.svg) no-repeat 50%
+                50%;
+              transition: background-color 0.2s ease-in-out;
+            }
+          }
+          &__fruit-and-berry-plants {
+            &::before {
+              content: '';
+              display: block;
+              margin-top: -3px;
+              width: 24px;
+              height: 24px;
+              z-index: 2;
+              background-color: #556d59;
+              -webkit-mask: url(/img/plants/is/is-fruit-and-berry-plants.svg)
+                no-repeat 50% 50%;
+              mask: url(/img/plants/is/is-fruit-and-berry-plants.svg) no-repeat
+                50% 50%;
+              transition: background-color 0.2s ease-in-out;
+            }
+          }
+          &__flowering-plants {
+            &::before {
+              content: '';
+              display: block;
+              margin-top: -3px;
+              width: 24px;
+              height: 24px;
+              z-index: 2;
+              background-color: #556d59;
+              -webkit-mask: url(/img/plants/is/is-flowering-plants.svg)
+                no-repeat 50% 50%;
+              mask: url(/img/plants/is/is-flowering-plants.svg) no-repeat 50%
+                50%;
+              transition: background-color 0.2s ease-in-out;
+            }
+          }
+          &__wild-plants {
+            &::before {
+              content: '';
+              display: block;
+              margin-top: -3px;
+              width: 24px;
+              height: 24px;
+              z-index: 2;
+              background-color: #556d59;
+              -webkit-mask: url(/img/plants/is/is-wild-plants.svg) no-repeat 50%
+                50%;
+              mask: url(/img/plants/is/is-wild-plants.svg) no-repeat 50% 50%;
+              transition: background-color 0.2s ease-in-out;
+            }
+          }
+          &__agricultural-crops {
+            &::before {
+              content: '';
+              display: block;
+              margin-top: -3px;
+              width: 24px;
+              height: 24px;
+              z-index: 2;
+              background-color: #556d59;
+              -webkit-mask: url(/img/plants/is/is-agricultural-crops.svg)
+                no-repeat 50% 50%;
+              mask: url(/img/plants/is/is-agricultural-crops.svg) no-repeat 50%
+                50%;
+              transition: background-color 0.2s ease-in-out;
+            }
+          }
+          &__technical-crops {
+            &::before {
+              content: '';
+              display: block;
+              margin-top: -3px;
+              width: 24px;
+              height: 24px;
+              z-index: 2;
+              background-color: #556d59;
+              -webkit-mask: url(/img/plants/is/is-technical-crops.svg) no-repeat
+                50% 50%;
+              mask: url(/img/plants/is/is-technical-crops.svg) no-repeat 50% 50%;
+              transition: background-color 0.2s ease-in-out;
+            }
+          }
+          &__tropical-plants {
+            &::before {
+              content: '';
+              display: block;
+              margin-top: -3px;
+              width: 24px;
+              height: 24px;
+              z-index: 2;
+              background-color: #556d59;
+              -webkit-mask: url(/img/plants/is/is-tropical-plants.svg) no-repeat
+                50% 50%;
+              mask: url(/img/plants/is/is-tropical-plants.svg) no-repeat 50% 50%;
+              transition: background-color 0.2s ease-in-out;
+            }
+          }
+          &__fertilizers {
+            &::before {
+              content: '';
+              display: block;
+              margin-top: -3px;
+              width: 24px;
+              height: 24px;
+              z-index: 2;
+              background-color: #66413c;
+              -webkit-mask: url(/img/fertilizers/is/is-fertilizers.svg)
+                no-repeat 50% 50%;
+              mask: url(/img/fertilizers/is/is-fertilizers.svg) no-repeat 50%
+                50%;
+              transition: background-color 0.2s ease-in-out;
+            }
+          }
+        }
+      }
+    }
+
+    &__title {
+      margin-bottom: 4px;
+      width: 100%;
+
+      a {
+        color: #11263c;
+        font-size: 16px;
+        font-weight: 600;
+        text-decoration: none;
+        &:hover {
+          transition: color 0.2s ease-in-out;
+          color: #dd2c76;
+        }
+      }
+    }
+    &__code {
+      color: #a0a8b1;
+      font-size: 12px;
+      font-weight: 400;
+    }
+    &__price {
+      color: #e8e9ea;
+      font-size: 24px;
+      font-weight: 500;
+    }
+
+    &__learnmore {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      opacity: 0;
+      visibility: hidden;
+      position: absolute;
+      bottom: 16px;
+      right: 16px;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 32px;
+      background-color: #dd2c76;
+      padding: 10px 20px !important;
+      transition:
+        background-color 0.2s ease-in-out,
+        opacity 0.2s ease-in-out,
+        visibility 0.2s ease-in-out;
+
+      &__arrowMask {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        background-color: currentColor;
+
+        /* Маска */
+        -webkit-mask: url('/img/arrowAll.svg') no-repeat center;
+        mask: url('/img/arrowAll.svg') no-repeat center;
+        mask-size: 16px 16px;
+        -webkit-mask-size: 16px 16px;
+
+        transition: transform 0.2s ease-in-out;
+
+        /* Псевдокласс hover */
+        .list__item__learnmore:hover & {
+          transform: translateX(3px);
+        }
+
+        /* Скрытие на мобильных устройствах */
+        @media (max-width: 680px) {
+          display: none;
+        }
+        @media (min-width: 1151px) and (max-width: 1300px) {
+          display: none;
+        }
+      }
+      @media (max-width: 800px) {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      @media (min-width: 1151px) and (max-width: 1300px) {
+        left: 16px;
+      }
+
+      @media (max-width: 680px) {
+        left: 16px;
+      }
+
+      &:hover {
+        background-color: #b82261;
+        transition: background-color 0.2s ease-in-out;
+      }
+
+      &_added {
+        opacity: 1;
+        visibility: visible;
+        background-color: #16d9a6 !important;
+        pointer-events: none !important;
+        cursor: none !important;
+
+        &:hover {
+          background-color: #16d9a6;
+        }
+      }
+
+      &:disabled {
+        opacity: 0.5;
+        pointer-events: none;
+      }
+    }
+
+    &:hover {
+      background-color: #fff;
+      box-shadow: 8px 8px 40px 0px rgba(112, 144, 176, 0.24);
+      transition:
+        background-color 0.2s ease-in-out,
+        box-shadow 0.2s ease-in-out;
+    }
+
+    &:hover &__actions,
+    &:hover &__learnmore {
+      opacity: 1;
+      visibility: visible;
+      transition:
+        background-color 0.2s ease-in-out,
+        opacity 0.2s ease-in-out,
+        visibility 0.2s ease-in-out;
+    }
+
+    &:hover &__img img {
+      transition: background 0.2s ease-in-out;
+      background: radial-gradient(
+        52.53% 52.53% at 50% 47.47%,
+        #4e5d77 0%,
+        rgba(42, 50, 63, 0) 100%
+      );
+    }
+  }
+
+  &__item_ad {
+    min-height: 453px;
+    position: relative;
+    padding: 16px;
+    transition: box-shadow 0.2s ease-in-out;
+    display: block;
+    background: radial-gradient(
+        112.11% 111.8% at 100% 0%,
+        #4075ff 0%,
+        rgba(64, 117, 255, 0) 100%
+      ),
+      radial-gradient(
+        111.72% 111.46% at 27% 0%,
+        #16d9a6 0%,
+        rgba(22, 217, 166, 0) 100%
+      ),
+      #9466ff;
+
+    &__inner {
+      text-decoration: none;
+    }
+
+    &__ad {
+      top: 16px !important;
+      right: 16px !important;
+
+      @media (max-width: 590px) {
+        height: 24px !important;
+        line-height: 22px !important;
+      }
+    }
+
+    &__subtitle {
+      position: relative;
+      width: max-content;
+      margin-bottom: 20px;
+
+      span {
+        padding-top: 5px;
+        display: inline-block;
+        background-color: #e8e9ea;
+        color: #2a323f;
+        font-size: 60px;
+        font-weight: 700;
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 36px;
+        line-height: 36px;
+
+        @media (max-width: 590px) {
+          font-size: 26px;
+          line-height: 26px;
+        }
+      }
+    }
+
+    &__subtitle__rect {
+      position: absolute;
+      right: 0;
+      background-image: url('/img/subtitle-rect.svg');
+      background-repeat: no-repeat;
+      background-position: center center;
+      bottom: -15px;
+      width: 25px;
+      height: 15px;
+      background-size: 25px 15px;
+    }
+
+    &__img {
+      width: 224px;
+      height: 255px;
+      margin: 0 auto;
+      text-align: center;
+
+      @media (max-width: 590px) {
+        width: 160px;
+        height: 196px;
+      }
+
+      @media (max-width: 590px) {
+        width: 200px;
+        height: 250px;
+      }
+
+      img {
+        max-width: 100%;
+        max-height: 100%;
+      }
+    }
+
+    &__title {
+      margin: 0;
+      margin-top: auto;
+      color: #e8e9ea;
+      font-size: 18px;
+      font-weight: 700;
+
+      @media (max-width: 590px) {
+        position: absolute;
+        bottom: 16px;
+        left: 16px;
+      }
+
+      span {
+        display: block;
+
+        &:first-child {
+          margin-bottom: 15px;
+
+          @media (max-width: 590px) {
+            font-size: 14px;
+            margin-bottom: 10px;
+          }
+        }
+
+        &:last-child {
+          font-size: 56px;
+          line-height: 45px;
+
+          @media (max-width: 590px) {
+            font-size: 46px;
+          }
+        }
+      }
+    }
+
+    &:hover {
+      box-shadow:
+        0px 12px 20px 0px rgba(0, 0, 0, 0.2),
+        0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+      transition: box-shadow 0.2s ease-in-out;
+    }
+  }
+}
+
+.product {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+
+  @media (max-width: 590px) {
+    margin-bottom: 16px;
+  }
+
+  &__stock {
+    margin-right: 16px;
+    padding-left: 8px;
+    font-size: 12px;
+    background-repeat: no-repeat;
+    background-position: left center;
+
+    &__green {
+      color: #26da72;
+      background-image: url('/img/green-ellipse.svg');
+    }
+
+    &__red {
+      color: #ff4747;
+      background-image: url('/img/red-ellipse.svg');
+    }
+  }
+
+  &__code {
+    color: #a5a8ad;
+    font-size: 12px;
+  }
+
+  &__color,
+  &__composition {
+    display: block;
+    margin-bottom: 24px;
+    color: #e8e9ea;
+    font-size: 14px;
+  }
+
+  &__size_title {
+    color: #e8e9ea;
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+
+  &__count_title {
+    display: block;
+    margin-bottom: 12px;
+    color: #e8e9ea;
+    font-size: 14px;
+  }
+}
+
+.blockButton {
+  display: flex;
+  align-items: center;
+
+  &__dots {
+    display: flex;
+    gap: 8px;
+
+    &__dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+  }
+
+  &__rating {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    &__starImage {
+      width: 16px;
+      height: 16px;
+    }
+  }
+  &__ratingValue {
+    font-size: 14px;
+    font-weight: 600;
+    color: #11263c;
+    &__count {
+      font-size: 14px;
+      font-weight: 500;
+      color: #707d8a;
+    }
+  }
+  &__button {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #11263c;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+    margin-left: auto;
+
+    &:hover {
+      color: #c72368;
+    }
+  }
+
+  &__likes {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #11263c;
+
+    &__likeIcon {
+      width: 16px;
+      height: 16px;
+    }
+
+    &__likeCount {
+      font-size: 14px;
+      font-weight: 600;
+      color: #11263c;
+    }
+  }
+}
+
+.colors {
+  &__dots {
+    position: absolute;
+    top: 312px;
+    left: 16px;
+    z-index: 10;
+    display: flex;
+    gap: 8px;
+
+    &__dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+  }
+}
+.decoration {
+  text-decoration: none;
+}

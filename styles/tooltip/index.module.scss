@@ -1,0 +1,35 @@
+.tooltip {
+  position: absolute;
+  top: -6px;
+  width: max-content;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background-color: #fafafa;
+  z-index: 10;
+  box-shadow: 8px 8px 40px 0px rgba(112, 144, 176, 0.24);
+  transition:
+    background-color 0.2s ease-in-out,
+    box-shadow 0.2s ease-in-out;
+
+  &__inner {
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 5px;
+      right: -30px;
+      transform: rotate(90deg);
+      height: 8px;
+      width: 30px;
+      background-image: url(/img/popup-arrow-light.svg);
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+  }
+
+  &__text {
+    color: #11263c;
+    font-size: 14px;
+  }
+}

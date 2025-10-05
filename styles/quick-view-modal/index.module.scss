@@ -1,0 +1,495 @@
+.modal {
+  width: 992px;
+  height: 568px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  background: #f1f1f1;
+  box-shadow: 8px 8px 40px 0px rgba(112, 144, 176, 0.24);
+  display: flex;
+  border-radius: 16px;
+
+  @media (max-width: 1070px) {
+    width: 815px;
+  }
+
+  @media (max-width: 890px) {
+    width: 733px;
+  }
+
+  &__close {
+    height: 15px;
+    width: 15px;
+    z-index: 1;
+    position: absolute;
+    right: 32px;
+    top: 35px;
+
+    &::before {
+      background-color: #11263c;
+      content: '';
+      height: 100%;
+      width: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      transition: background-color 0.2s ease-in-out;
+      -webkit-mask: url(/img/close-small.svg) no-repeat 50% 50%;
+      mask: url(/img/close-small.svg) no-repeat 50% 50%;
+    }
+
+    &:hover::before {
+      transition: background-color 0.2s ease-in-out;
+      background-color: #8faf95;
+    }
+  }
+
+  &__actions {
+    position: absolute;
+    top: 74px;
+    right: 32px;
+    display: flex;
+    align-items: center;
+
+    div {
+      button {
+        margin-bottom: 0 !important;
+      }
+
+      &:first-child {
+        margin-right: 10px;
+      }
+    }
+  }
+
+  &__left {
+    max-width: 480px;
+
+    @media (max-width: 1070px) {
+      max-width: 350px;
+    }
+
+    @media (max-width: 890px) {
+      max-width: 270px;
+    }
+
+    &__slider {
+      position: relative;
+      max-height: 480px;
+
+      &__slide {
+        display: flex !important;
+        align-items: flex-start;
+        justify-content: flex-start;
+        max-height: 480px;
+
+        img {
+          max-height: 100%;
+          max-width: 100%;
+          border-radius: 16px;
+          object-fit: cover;
+        }
+
+        &__arrow {
+          width: 24px;
+          height: 24px;
+          border-radius: 24px;
+          background-color: #a0a8b1 !important;
+          position: absolute;
+          bottom: -49px;
+          z-index: 2;
+          overflow: hidden;
+          transition: background-color 0.2s ease-in-out;
+          bottom: -47px;
+          background-image: url(/img/slider-arrow.svg);
+          background-repeat: no-repeat;
+          background-position: center center;
+
+          &:hover {
+            background-color: #8faf95 !important;
+            transition: background-color 0.2s ease-in-out;
+          }
+        }
+
+        &__dots {
+          display: flex;
+          align-items: center;
+          position: absolute;
+          bottom: -42px;
+          left: 50%;
+          transform: translateX(-50%);
+
+          & li:not(:last-child) {
+            margin-right: 8px;
+          }
+
+          & li button {
+            position: relative;
+          }
+
+          & li button svg {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            fill: #797e8b;
+            transition: fill 0.2s ease-in-out;
+          }
+
+          & li button:hover svg {
+            fill: #92df6e;
+            transition: fill 0.2s ease-in-out;
+          }
+        }
+      }
+    }
+  }
+
+  &__right {
+    position: relative;
+    padding: 32px;
+    width: 100%;
+
+    &__text {
+      color: #415163;
+      font-size: 14px;
+      font-weight: 400;
+    }
+
+    &__code {
+      color: #a0a8b1;
+      font-size: 12px;
+      font-weight: 400;
+    }
+    &__title {
+      margin: 0;
+
+      a {
+        color: #415163;
+        font-size: 22px;
+        font-weight: 600;
+        text-decoration: none;
+        &:hover {
+          transition: color 0.2s ease-in-out;
+          color: #dd2c76;
+        }
+      }
+    }
+    &__titleSub {
+      margin: 0;
+      padding-top: 4px;
+      padding-bottom: 24px;
+      color: #707d8a;
+      font-size: 14px;
+      font-weight: 500;
+
+      a {
+        text-decoration: none;
+      }
+      &:hover {
+        transition: color 0.2s ease-in-out;
+        color: #799c7f;
+      }
+    }
+    &__containerIcons {
+      color: #415163;
+      font-size: 14px;
+      &__stroke {
+        display: flex;
+        margin-bottom: 8px;
+      }
+    }
+
+    &__bottom {
+      &__inner {
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    &__more {
+      padding: 12px 24px;
+      position: absolute;
+      bottom: 32px;
+      right: 0;
+      left: 0;
+      text-align: center;
+
+      &__link {
+        text-decoration: none;
+        color: #dd2c76;
+        text-align: center;
+        font-size: 16px;
+        font-weight: 600;
+        transition: color 0.2s ease-in-out;
+
+        &:hover {
+          color: #b82261;
+          transition: color 0.2s ease-in-out;
+        }
+      }
+    }
+  }
+}
+
+.modal__left__slider__slide__dot {
+  width: 6px;
+  height: 6px;
+  background-image: url(/img/gray-ellipse.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.prev {
+  left: 159px;
+
+  @media (max-width: 1070px) {
+    left: 100px;
+  }
+
+  @media (max-width: 890px) {
+    left: 63px;
+  }
+}
+
+.next {
+  right: 159px;
+
+  @media (max-width: 1070px) {
+    right: 100px;
+  }
+
+  @media (max-width: 890px) {
+    right: 63px;
+  }
+}
+
+.next {
+  transform: rotate(180deg);
+}
+
+.blockButton {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+
+  &__dots {
+    display: flex;
+    gap: 8px;
+
+    &__dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+  }
+
+  &__rating {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    &__starImage {
+      width: 16px;
+      height: 16px;
+    }
+  }
+  &__ratingValue {
+    font-size: 14px;
+    font-weight: 600;
+    color: #11263c;
+    &__count {
+      font-size: 14px;
+      font-weight: 500;
+      color: #707d8a;
+    }
+  }
+  &__button {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #11263c;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+    margin-left: auto;
+
+    &:hover {
+      color: #c72368;
+    }
+  }
+
+  &__likes {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #11263c;
+
+    &__likeIcon {
+      width: 16px;
+      height: 16px;
+    }
+
+    &__likeCount {
+      font-size: 14px;
+      font-weight: 600;
+      color: #11263c;
+    }
+  }
+}
+
+.decoration {
+  text-decoration: none;
+}
+
+.truncate_text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 300px;
+  display: block;
+}
+
+.line_clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-clamp: 4;
+}
+
+.types {
+  &__item {
+    &::before {
+      content: '';
+      display: block;
+      margin-top: -3px;
+      margin-right: 8px;
+      width: 24px;
+      height: 24px;
+      z-index: 2;
+      background-color: #556d59;
+      transition: background-color 0.2s ease-in-out;
+      -webkit-mask: no-repeat 50% 50%;
+      mask: no-repeat 50% 50%;
+    }
+  }
+
+  &__itemLight {
+    &::before {
+      background-color: #a0a8b1;
+      content: '';
+      display: block;
+      margin-top: -3px;
+      margin-right: 8px;
+      width: 24px;
+      height: 24px;
+      z-index: 2;
+      transition: background-color 0.2s ease-in-out;
+      -webkit-mask: no-repeat 50% 50%;
+      mask: no-repeat 50% 50%;
+    }
+  }
+
+  &__succulents::before {
+    background-color: #986529;
+    -webkit-mask-image: url(/img/plants/is/is-succulents.svg);
+    mask-image: url(/img/plants/is/is-succulents.svg);
+  }
+
+  &__houseplants::before {
+    -webkit-mask-image: url(/img/plants/is/is-houseplants.svg);
+    mask-image: url(/img/plants/is/is-houseplants.svg);
+  }
+
+  &__garden-plants::before {
+    -webkit-mask-image: url(/img/plants/is/is-garden-plants.svg);
+    mask-image: url(/img/plants/is/is-garden-plants.svg);
+  }
+
+  &__vegetable-garden-plants::before {
+    -webkit-mask-image: url(/img/plants/is/is-vegetable-garden-plants.svg);
+    mask-image: url(/img/plants/is/is-vegetable-garden-plants.svg);
+  }
+
+  &__medicinal-plants::before {
+    -webkit-mask-image: url(/img/plants/is/is-medicinal-plants.svg);
+    mask-image: url(/img/plants/is/is-medicinal-plants.svg);
+  }
+
+  &__aquarium-and-marsh-plants::before {
+    -webkit-mask-image: url(/img/plants/is/is-aquarium-and-marsh-plants.svg);
+    mask-image: url(/img/plants/is/is-aquarium-and-marsh-plants.svg);
+  }
+
+  &__decorative-conifers::before {
+    -webkit-mask-image: url(/img/plants/is/is-decorative-conifers.svg);
+    mask-image: url(/img/plants/is/is-decorative-conifers.svg);
+  }
+
+  &__fruit-and-berry-plants::before {
+    -webkit-mask-image: url(/img/plants/is/is-fruit-and-berry-plants.svg);
+    mask-image: url(/img/plants/is/is-fruit-and-berry-plants.svg);
+  }
+
+  &__flowering-plants::before {
+    -webkit-mask-image: url(/img/plants/is/is-flowering-plants.svg);
+    mask-image: url(/img/plants/is/is-flowering-plants.svg);
+  }
+
+  &__wild-plants::before {
+    -webkit-mask-image: url(/img/plants/is/is-wild-plants.svg);
+    mask-image: url(/img/plants/is/is-wild-plants.svg);
+  }
+
+  &__agricultural-crops::before {
+    -webkit-mask-image: url(/img/plants/is/is-agricultural-crops.svg);
+    mask-image: url(/img/plants/is/is-agricultural-crops.svg);
+  }
+
+  &__technical-crops::before {
+    -webkit-mask-image: url(/img/plants/is/is-technical-crops.svg);
+    mask-image: url(/img/plants/is/is-technical-crops.svg);
+  }
+
+  &__tropical-plants::before {
+    -webkit-mask-image: url(/img/plants/is/is-tropical-plants.svg);
+    mask-image: url(/img/plants/is/is-tropical-plants.svg);
+  }
+
+  &__fertilizers::before {
+    background-color: #66413c;
+    -webkit-mask-image: url(/img/fertilizers/is/is-fertilizers.svg);
+    mask-image: url(/img/fertilizers/is/is-fertilizers.svg);
+  }
+
+  &__lights::before {
+    -webkit-mask-image: url(/img/plants/lights.svg);
+    mask-image: url(/img/plants/lights.svg);
+  }
+  &__waterings::before {
+    -webkit-mask-image: url(/img/plants/waterings.svg);
+    mask-image: url(/img/plants/waterings.svg);
+  }
+  &__soils::before {
+    -webkit-mask-image: url(/img/plants/soils.svg);
+    mask-image: url(/img/plants/soils.svg);
+  }
+  &__pests::before {
+    -webkit-mask-image: url(/img/plants/pests.svg);
+    mask-image: url(/img/plants/pests.svg);
+  }
+  &__diseases::before {
+    -webkit-mask-image: url(/img/plants/diseases.svg);
+    mask-image: url(/img/plants/diseases.svg);
+  }
+}
